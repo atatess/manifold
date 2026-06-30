@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node / extension
+node_modules/
+extension/out/
+extension/dist/
+*.vsix
+
+# Models / large artifacts (never commit weights)
+models/
+*.safetensors
+*.gguf
+
+# Scratch / OS
+.DS_Store
+scratch/
+*.log

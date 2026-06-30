@@ -1,0 +1,27 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Least privilege: the test job only needs to read the repo.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # Apple Silicon runner: MLX requires arm64 macOS. The suite uses a tiny
+    # random-weight model and an injected fake forward, so it needs no GPU,
+    # no network, and no model download.
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: uv sync --extra dev
+      - name: Run tests
+        run: uv run pytest -q
