@@ -24,3 +24,6 @@ scratch/
 
 # Local agent guidance (kept local, not published)
 CLAUDE.md
+
+# Local-only planning doc (the public design doc stays tracked)
+docs/plans/2026-07-01-phase2-and-roadmap-plan.md
