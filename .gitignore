@@ -21,3 +21,6 @@ models/
 .DS_Store
 scratch/
 *.log
+
+# Local agent guidance (kept local, not published)
+CLAUDE.md
